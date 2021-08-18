@@ -15,8 +15,13 @@ function PersonalInfo() {
       <InputField fieldData={lastName} setData={setLastName} fieldType="text" />
       <InputField fieldData={emailAddress} setData={setEmail} fieldType="email" />
       <InputField fieldData={phoneNumber} setData={setPhoneNumber} fieldType="tel" />
-
-      <textarea required id="profile_input" placeholder="Personal Profile"></textarea>
+      <textarea
+        onChange={(e) => setProfile(e.target.value)}
+        required
+        id="profile_input"
+        placeholder="Personal Profile"
+        value={personalProfile}
+      ></textarea>
     </div>
   );
 }
