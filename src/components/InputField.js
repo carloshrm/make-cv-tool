@@ -1,11 +1,11 @@
 import React from "react";
 
-function InputField({ fieldData, setData, fieldType }) {
+function InputField({ fieldData, setData, fieldType, displaySwitch }) {
   const inputRef = React.createRef();
   const displayRef = React.createRef();
-  let displaySwitch = true;
 
   function editField() {
+    if (displaySwitch === undefined) return;
     inputRef.current.style.display = displaySwitch ? "none" : "block";
     displayRef.current.style.display = displaySwitch ? "block" : "none";
     displaySwitch = !displaySwitch;

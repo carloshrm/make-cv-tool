@@ -18,7 +18,7 @@ function EducationEntry({ info, addEntry }) {
     defaultValues();
   }, [info]);
 
-  const handleAddEducation = () => {
+  const addEntryHandler = () => {
     const newEntry = {
       educationTitle,
       educationPlace,
@@ -30,9 +30,10 @@ function EducationEntry({ info, addEntry }) {
 
   return (
     <div className="education_entry">
-      <InputField fieldData={educationTitle} setData={setEducationTitle} fieldType="Text" />
-      <InputField fieldData={educationPlace} setData={setEducationPlace} fieldType="Text" />
-      <InputField fieldData={educationYear} setData={setEducationYear} fieldType="Text" />
+      <InputField fieldData={educationTitle} setData={setEducationTitle} fieldType="text" />
+      <InputField fieldData={educationPlace} setData={setEducationPlace} fieldType="text" />
+      <InputField fieldData={educationYear} setData={setEducationYear} fieldType="text" />
+
       <textarea
         onChange={(e) => setEducationRemarks(e.target.value)}
         id="education_remarks"
@@ -40,7 +41,7 @@ function EducationEntry({ info, addEntry }) {
         rows="10"
         value={educationRemarks}
       ></textarea>
-      <button onClick={handleAddEducation}>Add Entry</button>
+      <button onClick={addEntryHandler}>Add Entry</button>
     </div>
   );
 }

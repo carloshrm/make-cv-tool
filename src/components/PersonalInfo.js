@@ -11,10 +11,30 @@ function PersonalInfo() {
   return (
     <div id="personal_info_div">
       <h3>Personal Info:</h3>
-      <InputField fieldData={firstName} setData={setFirstName} fieldType="text" />
-      <InputField fieldData={lastName} setData={setLastName} fieldType="text" />
-      <InputField fieldData={emailAddress} setData={setEmail} fieldType="email" />
-      <InputField fieldData={phoneNumber} setData={setPhoneNumber} fieldType="tel" />
+      <InputField
+        fieldData={firstName}
+        setData={setFirstName}
+        fieldType="text"
+        displaySwitch={true}
+      />
+      <InputField
+        fieldData={lastName}
+        setData={setLastName}
+        fieldType="text"
+        displaySwitch={true}
+      />
+      <InputField
+        fieldData={emailAddress}
+        setData={setEmail}
+        fieldType="email"
+        displaySwitch={true}
+      />
+      <InputField
+        fieldData={phoneNumber}
+        setData={setPhoneNumber}
+        fieldType="tel"
+        displaySwitch={true}
+      />
       <textarea
         onChange={(e) => setProfile(e.target.value)}
         required
