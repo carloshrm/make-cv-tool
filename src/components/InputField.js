@@ -1,6 +1,6 @@
 import React from "react";
 
-function InputField({ fieldData, setData, fieldType, displaySwitch }) {
+function InputField({ dataValue, setDataFunction, fieldType, displaySwitch }) {
   const inputRef = React.createRef();
   const displayRef = React.createRef();
 
@@ -19,12 +19,12 @@ function InputField({ fieldData, setData, fieldType, displaySwitch }) {
         type={fieldType}
         required
         minLength="1"
-        placeholder={fieldData}
-        value={fieldData}
-        onChange={(e) => setData(e.target.value)}
+        placeholder={dataValue}
+        value={dataValue}
+        onChange={(e) => setDataFunction(e.target.value)}
       />
       <span style={{ display: "none" }} ref={displayRef} onClick={editField}>
-        {fieldData}
+        {dataValue}
       </span>
     </div>
   );

@@ -1,5 +1,6 @@
 import "./App.css";
 import EducationInfo from "./components/EducationInfo";
+import JobInfo from "./components/JobInfo";
 import PersonalInfo from "./components/PersonalInfo";
 
 // required info
@@ -26,6 +27,7 @@ function App() {
     <div className="App">
       <PersonalInfo />
       <EducationInfo />
+      <JobInfo />
     </div>
   );
 }

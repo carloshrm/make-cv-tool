@@ -6,37 +6,38 @@ function PersonalInfo() {
   const [lastName, setLastName] = useState("Last Name");
   const [emailAddress, setEmail] = useState("Email Address");
   const [phoneNumber, setPhoneNumber] = useState("Phone Number");
-  const [personalProfile, setProfile] = useState("Personal Profile");
+  const [personalProfile, setPersonalProfile] = useState("Personal Profile");
 
   return (
     <div id="personal_info_div">
       <h3>Personal Info:</h3>
       <InputField
-        fieldData={firstName}
-        setData={setFirstName}
+        dataValue={firstName}
+        setDataFunction={setFirstName}
         fieldType="text"
         displaySwitch={true}
       />
       <InputField
-        fieldData={lastName}
-        setData={setLastName}
+        dataValue={lastName}
+        setDataFunction={setLastName}
         fieldType="text"
         displaySwitch={true}
       />
       <InputField
-        fieldData={emailAddress}
-        setData={setEmail}
+        dataValue={emailAddress}
+        setDataFunction={setEmail}
         fieldType="email"
         displaySwitch={true}
       />
       <InputField
-        fieldData={phoneNumber}
-        setData={setPhoneNumber}
+        dataValue={phoneNumber}
+        setDataFunction={setPhoneNumber}
+        dataKey={"phoneNumber"}
         fieldType="tel"
         displaySwitch={true}
       />
       <textarea
-        onChange={(e) => setProfile(e.target.value)}
+        onChange={(e) => setPersonalProfile(e.target.value)}
         required
         id="profile_input"
         placeholder="Personal Profile"

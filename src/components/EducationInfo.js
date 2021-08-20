@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import EducationEntry from "./EducationEntry";
-import EducationEntryDisplay from "./EducationEntryDisplay";
+import InformationListEntry from "./InformationListEntry";
+import DisplayListedEntry from "./DisplayListedEntry";
 
 // title
 // graducation place, year
@@ -12,20 +12,30 @@ import EducationEntryDisplay from "./EducationEntryDisplay";
 function EducationInfo() {
   const [educationInfo, setEducationInfoEntry] = useState([]);
 
+  const defaultValues = {
+    title: "Degree Title",
+    location: "Graduation Place",
+    year: "Graducation Year",
+    remarks: "Extra Remarks",
+  };
+
   function removeEntry(targetIndex) {
     setEducationInfoEntry(educationInfo.filter((e, i) => i !== targetIndex));
   }
-  function editEntry(targetIndex) {}
 
   return (
     <div id="education_info_div">
       <h3>Education:</h3>
 
       {educationInfo.map((entry, i) => (
-        <EducationEntryDisplay key={i} id={i} singleEntryInfo={entry} removeEntry={removeEntry} />
+        <DisplayListedEntry key={i} id={i} singleEntryInfo={entry} removeEntry={removeEntry} />
       ))}
 
-      <EducationEntry info={educationInfo} addEntry={setEducationInfoEntry} />
+      <InformationListEntry
+        info={educationInfo}
+        addEntry={setEducationInfoEntry}
+        defaultValues={defaultValues}
+      />
     </div>
   );
 }
