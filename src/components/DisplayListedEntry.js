@@ -2,7 +2,7 @@ import React from "react";
 
 function displayListedEntry({ id, singleEntryInfo, removeEntry }) {
   return (
-    <div className="education_entry">
+    <div>
       <ul>
         <li>{singleEntryInfo.entryTitle}</li>
         <li>{singleEntryInfo.entryLocation}</li>

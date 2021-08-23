@@ -12,7 +12,7 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch }) {
   }
 
   return (
-    <div>
+    <>
       <input
         onBlur={editField}
         ref={inputRef}
@@ -26,7 +26,7 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch }) {
       <span style={{ display: "none" }} ref={displayRef} onClick={editField}>
         {dataValue}
       </span>
-    </div>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@ import "./App.css";
 import EducationInfo from "./components/EducationInfo";
 import JobInfo from "./components/JobInfo";
 import PersonalInfo from "./components/PersonalInfo";
+import SkillsHobbies from "./components/SkillsHobbies";
 
 // required info
 
@@ -10,6 +11,7 @@ import PersonalInfo from "./components/PersonalInfo";
 // personal profile
 
 // template form - add individual entries
+
 // job history
 // ( date - role title, location, comp name)
 
@@ -28,6 +30,7 @@ function App() {
       <PersonalInfo />
       <EducationInfo />
       <JobInfo />
+      <SkillsHobbies />
     </div>
   );
 }
