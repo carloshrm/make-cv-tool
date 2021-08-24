@@ -1,0 +1,13 @@
+#main_resume {
+  width: 80vw;
+
+  height: 100vh;
+  margin: 0 auto;
+}
+
+#personal_info_div {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

@@ -10,9 +10,9 @@ function JobInfo() {
   const [jobInfo, setJobInfoEntry] = useState([]);
 
   const defaultValues = {
-    title: "Degree Title",
-    location: "Graduation Place",
-    year: "Graducation Year",
+    title: "Position",
+    location: "Location",
+    year: "Date",
     remarks: "Extra Remarks",
   };
 

@@ -7,7 +7,7 @@ function SkillsHobbies() {
 
   const skillDefault = "Describe a skill you'd like to add...";
 
-  function addSkill(content) {
+  function addSkill() {
     setSkillEntries([...skillEntries, individualSkill]);
     setIndividualSkill(skillDefault);
   }

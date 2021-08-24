@@ -27,10 +27,12 @@ import SkillsHobbies from "./components/SkillsHobbies";
 function App() {
   return (
     <div className="App">
-      <PersonalInfo />
-      <EducationInfo />
-      <JobInfo />
-      <SkillsHobbies />
+      <div id="main_resume">
+        <PersonalInfo />
+        <EducationInfo />
+        <JobInfo />
+        <SkillsHobbies />
+      </div>
     </div>
   );
 }
