@@ -27,6 +27,11 @@ import SkillsHobbies from "./components/SkillsHobbies";
 function App() {
   return (
     <div className="App">
+      <ul id="top_nav">
+        <li>Save</li>
+        <li>Clear</li>
+        <li>instruc</li>
+      </ul>
       <div id="main_resume">
         <PersonalInfo />
         <EducationInfo />

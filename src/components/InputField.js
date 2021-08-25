@@ -6,6 +6,8 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
 
   function editField() {
     if (displaySwitch === undefined) return;
+    if (inputRef.current.value === "" || inputRef.current.value === " ") return;
+
     inputRef.current.style.display = displaySwitch ? "none" : "block";
     displayRef.current.style.display = displaySwitch ? "block" : "none";
     displaySwitch = !displaySwitch;
@@ -15,14 +17,17 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
     <>
       <input
         onBlur={editField}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === "Escape") e.target.blur();
+        }}
         ref={inputRef}
         type={fieldType}
-        required
         minLength="1"
         placeholder={dataValue}
         value={dataValue}
         onChange={(e) => setDataFunction(e.target.value)}
       />
+
       <p style={{ display: "none" }} className={style} ref={displayRef} onClick={editField}>
         {dataValue}
       </p>

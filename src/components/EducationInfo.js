@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InformationListEntry from "./InformationListEntry";
 import DisplayListedEntry from "./DisplayListedEntry";
+import styles from "../styles/ListedInfo.module.css";
 
 // title
 // graducation place, year
@@ -14,8 +15,8 @@ function EducationInfo() {
 
   const defaultValues = {
     title: "Degree Title",
-    location: "Graduation Place",
-    year: "Graducation Year",
+    location: "Location",
+    year: "Year",
     remarks: "Extra Remarks",
   };
 
@@ -24,14 +25,15 @@ function EducationInfo() {
   }
 
   return (
-    <div id="education_info_div">
-      <h3>Education:</h3>
+    <div className={styles.listed_info_div}>
+      <h3>Education </h3>
 
       {educationInfo.map((entry, i) => (
         <DisplayListedEntry key={i} id={i} singleEntryInfo={entry} removeEntry={removeEntry} />
       ))}
 
       <InformationListEntry
+        style={styles.listed_info_input}
         info={educationInfo}
         addEntry={setEducationInfoEntry}
         defaultValues={defaultValues}

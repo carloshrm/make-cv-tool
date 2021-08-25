@@ -1,13 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: "Raleway", sans-serif;
+}
 #main_resume {
   width: 80vw;
-
   height: 100vh;
   margin: 0 auto;
 }
+#top_nav {
+  display: flex;
+  list-style-type: none;
+  padding: 1rem;
+  margin-bottom: 10px;
+  width: 100vw;
+  justify-content: space-around;
+}
+#top_nav li {
+  font-weight: bold;
+}
 
-#personal_info_div {
-  display: grid;
+input,
+textarea {
+  font-weight: normal;
   text-align: center;
-  align-items: center;
-  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
+  font-size: 1.3rem;
+  padding: 0.3rem;
+  margin: 2px;
+  border: unset;
+}
+
+h3 {
+  margin: 0.5rem 0;
+  font-size: 1.5em;
+  border-bottom: solid 2px black;
+}
+span {
+  text-align: left;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
 }
