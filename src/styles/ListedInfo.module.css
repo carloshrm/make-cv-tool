@@ -1,6 +1,3 @@
-.listed_info_div {
-}
-
 .listed_info_input {
   display: flex;
   align-items: center;
@@ -25,4 +22,14 @@
   text-align: start;
   border: solid 1px black;
   background-color: gainsboro;
+}
+
+.listed_entries {
+  margin: 1em 0 1em 2em;
+}
+.listed_entries button {
+  padding: 0 1em;
+
+  background-color: white;
+  border: 1px solid black;
 }

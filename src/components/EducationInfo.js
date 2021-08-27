@@ -25,12 +25,15 @@ function EducationInfo() {
   }
 
   return (
-    <div className={styles.listed_info_div}>
+    <div className={styles}>
       <h3>Education </h3>
-
-      {educationInfo.map((entry, i) => (
-        <DisplayListedEntry key={i} id={i} singleEntryInfo={entry} removeEntry={removeEntry} />
-      ))}
+      <div className={styles.listed_entries}>
+        <ul>
+          {educationInfo.map((entry, i) => (
+            <DisplayListedEntry key={i} id={i} singleEntryInfo={entry} removeEntry={removeEntry} />
+          ))}
+        </ul>
+      </div>
 
       <InformationListEntry
         style={styles.listed_info_input}

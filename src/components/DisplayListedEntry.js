@@ -3,12 +3,10 @@ import React from "react";
 function displayListedEntry({ id, singleEntryInfo, removeEntry }) {
   return (
     <div>
-      <ul>
-        <li>{singleEntryInfo.entryTitle}</li>
-        <li>{singleEntryInfo.entryLocation}</li>
-        <li>{singleEntryInfo.entryYear}</li>
-        <li>{singleEntryInfo.entryRemarks}</li>
-      </ul>
+      <span>{singleEntryInfo.entryTitle + " - "}</span>
+      <span>{singleEntryInfo.entryYear}</span>
+      <p>{singleEntryInfo.entryLocation}</p>
+      <p>{singleEntryInfo.entryRemarks}</p>
       <button onClick={() => removeEntry(id)}>Del</button>
     </div>
   );

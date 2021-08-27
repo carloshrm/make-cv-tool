@@ -8,21 +8,27 @@ function InformationListEntry({ info, addEntry, defaultValues, style }) {
   const [entryRemarks, setEntryRemarks] = useState("");
 
   useEffect(() => {
-    setEntryTitle(defaultValues.title);
-    setEntryLocation(defaultValues.location);
-    setEntryYear(defaultValues.year);
-    setEntryRemarks(defaultValues.remarks);
+    setDefaults();
   }, [info, defaultValues]);
 
-  const addEntryHandler = () => {
+  function addEntryHandler() {
     const newEntry = {
       entryTitle,
       entryLocation,
       entryYear,
-      entryRemarks,
     };
+    if (![defaultValues.remarks, " ", ""].some((val) => entryRemarks === val)) {
+      newEntry.entryRemarks = entryRemarks;
+    }
     addEntry((value) => [...value, newEntry]);
-  };
+  }
+
+  function setDefaults() {
+    setEntryTitle(defaultValues.title);
+    setEntryLocation(defaultValues.location);
+    setEntryYear(defaultValues.year);
+    setEntryRemarks(defaultValues.remarks);
+  }
 
   return (
     <div className={style}>
@@ -33,7 +39,7 @@ function InformationListEntry({ info, addEntry, defaultValues, style }) {
       <textarea onChange={(e) => setEntryRemarks(e.target.value)} value={entryRemarks}></textarea>
       <div>
         <button onClick={addEntryHandler}>Add</button>
-        <button onClick={addEntryHandler}>Clear</button>
+        <button onClick={setDefaults}>Clear</button>
       </div>
     </div>
   );
