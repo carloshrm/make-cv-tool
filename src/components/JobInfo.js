@@ -3,10 +3,6 @@ import DisplayListedEntry from "./DisplayListedEntry";
 import InformationListEntry from "./InformationListEntry";
 import styles from "../styles/ListedInfo.module.css";
 
-// template form - add individual entries
-// job history
-// ( date - role title, location, comp name)
-
 function JobInfo() {
   const [jobInfo, setJobInfoEntry] = useState([]);
 
@@ -22,8 +18,8 @@ function JobInfo() {
   }
 
   return (
-    <div className={styles}>
-      <h3>Job Info </h3>
+    <div>
+      <h3>Job Experience </h3>
       <div className={styles.listed_entries}>
         {jobInfo.map((entry, i) => (
           <DisplayListedEntry key={i} id={i} singleEntryInfo={entry} removeEntry={removeEntry} />
@@ -31,7 +27,7 @@ function JobInfo() {
       </div>
 
       <InformationListEntry
-        style={styles.listed_info_input}
+        style={styles}
         info={jobInfo}
         addEntry={setJobInfoEntry}
         defaultValues={defaultValues}

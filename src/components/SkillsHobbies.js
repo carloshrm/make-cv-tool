@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import InputField from "./InputField";
+import styles from "../styles/SkillsHobbies.module.css";
 
 function SkillsHobbies() {
   const [skillEntries, setSkillEntries] = useState([]);
   const [individualSkill, setIndividualSkill] = useState("");
 
-  const skillDefault = "Describe a skill you'd like to add...";
+  const skillDefault = "Type in one of your skills...";
 
   function addSkill() {
     setSkillEntries([...skillEntries, individualSkill]);
@@ -16,7 +17,7 @@ function SkillsHobbies() {
   }, []);
 
   return (
-    <div className="skills_and_hobbies_div">
+    <div className={styles.skills_and_hobbies}>
       <h3>Skills</h3>
       <ul>{skillEntries.length > 0 && skillEntries.map((entry, i) => <li key={i}>{entry}</li>)}</ul>
       <InputField

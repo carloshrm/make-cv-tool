@@ -3,13 +3,6 @@ import InformationListEntry from "./InformationListEntry";
 import DisplayListedEntry from "./DisplayListedEntry";
 import styles from "../styles/ListedInfo.module.css";
 
-// title
-// graducation place, year
-// comments (dissertation theme, advisor, etc... optional?)
-
-// form component/display component
-// map entries array into component for display
-
 function EducationInfo() {
   const [educationInfo, setEducationInfoEntry] = useState([]);
 
@@ -25,7 +18,7 @@ function EducationInfo() {
   }
 
   return (
-    <div className={styles}>
+    <div>
       <h3>Education </h3>
       <div className={styles.listed_entries}>
         <ul>
@@ -34,9 +27,8 @@ function EducationInfo() {
           ))}
         </ul>
       </div>
-
       <InformationListEntry
-        style={styles.listed_info_input}
+        style={styles}
         info={educationInfo}
         addEntry={setEducationInfoEntry}
         defaultValues={defaultValues}

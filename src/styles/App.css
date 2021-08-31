@@ -3,16 +3,18 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   font-family: "Raleway", sans-serif;
 }
+
 #main_resume {
   width: 80vw;
-  height: 100vh;
-  margin: 0 auto;
+  margin: 0 auto 10% auto;
 }
 #top_nav {
   display: flex;
+  position: sticky;
+  top: 0;
+  background-color: gainsboro;
   list-style-type: none;
   padding: 1rem;
   margin-bottom: 10px;
@@ -22,6 +24,14 @@ body {
 #top_nav li {
   font-weight: bold;
 }
+#footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.3rem;
+  background-color: gainsboro;
+}
 
 input,
 textarea {
@@ -29,7 +39,7 @@ textarea {
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding: 0.3rem;
   margin: 2px;
   border: unset;

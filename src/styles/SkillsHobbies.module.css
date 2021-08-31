@@ -1,0 +1,11 @@
+.skills_and_hobbies {
+  list-style-position: inside;
+  border-bottom: 2px solid black;
+}
+.skills_and_hobbies button {
+  background-color: white;
+  border: solid 1px black;
+  padding: 0.3rem 1rem;
+  margin: 1px auto;
+  width: 10%;
+}

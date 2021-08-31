@@ -33,3 +33,9 @@
   background-color: white;
   border: 1px solid black;
 }
+.form_title {
+  display: flex;
+  align-items: center;
+
+  background-color: gainsboro;
+}

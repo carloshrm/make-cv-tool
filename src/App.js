@@ -1,32 +1,13 @@
-import "./App.css";
+import { useEffect } from "react";
+import "./styles/App.css";
 import EducationInfo from "./components/EducationInfo";
 import JobInfo from "./components/JobInfo";
 import PersonalInfo from "./components/PersonalInfo";
 import SkillsHobbies from "./components/SkillsHobbies";
 
-// required info
-
-// name
-// address // phone || email
-// personal profile
-
-// template form - add individual entries
-
-// job history
-// ( date - role title, location, comp name)
-
-// education // qualifications
-//(name - date - title)
-
-// key skills // hobbies and intrests
-
-// extra section with options for more info
-
-// formatting
-
 function App() {
   return (
-    <div className="App">
+    <>
       <ul id="top_nav">
         <li>Save</li>
         <li>Clear</li>
@@ -37,8 +18,11 @@ function App() {
         <EducationInfo />
         <JobInfo />
         <SkillsHobbies />
+        <div id="footer">
+          <footer>Footer</footer>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -8,7 +8,7 @@ function PersonalInfo() {
   const [emailAddress, setEmail] = useState("Email Address...");
   const [phoneNumber, setPhoneNumber] = useState("Phone Number...");
   const [socialNetwork, setSocialNetwork] = useState("Social Netowrk");
-  const [personalProfile, setPersonalProfile] = useState("Personal Profile");
+  const [personalProfile, setPersonalProfile] = useState("Write a little about yourself...");
 
   const profileRef = React.createRef();
   const profileInput = React.createRef();
@@ -71,9 +71,6 @@ function PersonalInfo() {
           ref={profileInput}
           onBlur={swapDisplay}
           onChange={(e) => setPersonalProfile(e.target.value)}
-          required
-          id="profile_input"
-          placeholder="Personal Profile"
           value={personalProfile}
         ></textarea>
         <p onClick={swapDisplay} ref={profileRef} style={{ display: "none" }}>
