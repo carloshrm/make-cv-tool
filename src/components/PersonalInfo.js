@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InputField from "./InputField";
 import styles from "../styles/PersonalInfo.module.css";
 
 function PersonalInfo() {
-  const [userName, setUserName] = useState("Your Name...");
-  const [localAddress, setLocalAddress] = useState("Where you live...");
-  const [emailAddress, setEmail] = useState("Email Address...");
-  const [phoneNumber, setPhoneNumber] = useState("Phone Number...");
-  const [socialNetwork, setSocialNetwork] = useState("Social Netowrk");
-  const [personalProfile, setPersonalProfile] = useState("Write a little about yourself...");
+  const [personalInfo, setInfo] = useState({
+    userName: "",
+    localAddress: "",
+    emailAddress: "",
+    phoneNumber: "",
+    socialNetwork: "",
+    personalProfile: "",
+  });
 
   const profileRef = React.createRef();
   const profileInput = React.createRef();
+
+  function setDefaults() {
+    setInfo({
+      userName: "Your Name.",
+      localAddress: "Where you live.",
+      emailAddress: "Email Address.",
+      phoneNumber: "Phone Number.",
+      socialNetwork: "Social Network Link.",
+      personalProfile: "Write a little about yourself...",
+    });
+  }
+
   function swapDisplay(e) {
     if (profileInput.current.value === "" || profileInput.current.value === " ") return;
     let switchValue = e.target.nodeName === "P";
@@ -19,14 +33,29 @@ function PersonalInfo() {
     profileRef.current.style.display = switchValue ? "none" : null;
   }
 
+  useEffect(() => {
+    // Run only once when loaded. If no local data, then set the fields to their default value.
+    let localInfo = JSON.parse(localStorage.getItem("personalInfo"));
+    if (localInfo === null) {
+      setDefaults();
+    } else {
+      setInfo(localInfo);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Run every time a field is updated, set data locally.
+    localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+  });
+
   return (
     <>
       <div className={styles.personal_info_div}>
         <div>
           <InputField
             style={styles.name}
-            dataValue={userName}
-            setDataFunction={setUserName}
+            dataValue={personalInfo.userName}
+            setDataFunction={(val) => setInfo({ ...personalInfo, userName: val })}
             fieldType="text"
             displaySwitch={true}
           />
@@ -35,31 +64,31 @@ function PersonalInfo() {
           <span>Email Address:</span>
           <InputField
             style={styles.info}
-            dataValue={emailAddress}
-            setDataFunction={setEmail}
+            dataValue={personalInfo.emailAddress}
+            setDataFunction={(val) => setInfo({ ...personalInfo, emailAddress: val })}
             fieldType="email"
             displaySwitch={true}
           />
           <span>Address:</span>
           <InputField
             style={styles.info}
-            dataValue={localAddress}
-            setDataFunction={setLocalAddress}
+            dataValue={personalInfo.localAddress}
+            setDataFunction={(val) => setInfo({ ...personalInfo, localAddress: val })}
             fieldType="text"
             displaySwitch={true}
           />
           <span>Phone Number:</span>
           <InputField
             style={styles.info}
-            dataValue={phoneNumber}
-            setDataFunction={setPhoneNumber}
+            dataValue={personalInfo.phoneNumber}
+            setDataFunction={(val) => setInfo({ ...personalInfo, phoneNumber: val })}
             fieldType="tel"
             displaySwitch={true}
           />
           <span>Social Network:</span>
           <InputField
-            dataValue={socialNetwork}
-            setDataFunction={setSocialNetwork}
+            dataValue={personalInfo.socialNetwork}
+            setDataFunction={(val) => setInfo({ ...personalInfo, socialNetwork: val })}
             fieldType="text"
             displaySwitch={true}
           />
@@ -70,11 +99,11 @@ function PersonalInfo() {
         <textarea
           ref={profileInput}
           onBlur={swapDisplay}
-          onChange={(e) => setPersonalProfile(e.target.value)}
-          value={personalProfile}
+          onChange={(e) => setInfo({ ...personalInfo, personalProfile: e.target.value })}
+          value={personalInfo.personalProfile}
         ></textarea>
         <p onClick={swapDisplay} ref={profileRef} style={{ display: "none" }}>
-          {personalProfile}
+          {personalInfo.personalProfile}
         </p>
       </div>
     </>
