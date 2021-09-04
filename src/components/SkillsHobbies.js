@@ -14,7 +14,15 @@ function SkillsHobbies() {
   }
   useEffect(() => {
     setIndividualSkill(skillDefault);
+    let localSkills = JSON.parse(localStorage.getItem("skills"));
+    if (localSkills !== null) {
+      setSkillEntries(localSkills);
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("skills", JSON.stringify(skillEntries));
+  });
 
   return (
     <div className={styles.skills_and_hobbies}>

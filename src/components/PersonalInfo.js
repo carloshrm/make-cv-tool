@@ -34,7 +34,8 @@ function PersonalInfo() {
   }
 
   useEffect(() => {
-    // Run only once when loaded. If no local data, then set the fields to their default value.
+    // Run only once (using []) when loaded. If no local data is found,
+    // then set the fields to their default value.
     let localInfo = JSON.parse(localStorage.getItem("personalInfo"));
     if (localInfo === null) {
       setDefaults();
@@ -44,7 +45,7 @@ function PersonalInfo() {
   }, []);
 
   useEffect(() => {
-    // Run every time a field is updated, set data locally.
+    // Run every time a field is updated, set the new data locally.
     localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
   });
 

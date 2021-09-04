@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DisplayListedEntry from "./DisplayListedEntry";
 import InformationListEntry from "./InformationListEntry";
 import styles from "../styles/ListedInfo.module.css";
@@ -16,6 +16,17 @@ function JobInfo() {
   function removeEntry(targetIndex) {
     setJobInfoEntry(jobInfo.filter((e, i) => i !== targetIndex));
   }
+
+  useEffect(() => {
+    let localJob = JSON.parse(localStorage.getItem("jobInfo"));
+    if (localJob !== null) {
+      setJobInfoEntry(localJob);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("jobInfo", JSON.stringify(jobInfo));
+  });
 
   return (
     <div>

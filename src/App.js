@@ -6,12 +6,16 @@ import PersonalInfo from "./components/PersonalInfo";
 import SkillsHobbies from "./components/SkillsHobbies";
 
 function App() {
+  function resetToDefault() {
+    localStorage.clear();
+    document.location.reload();
+  }
+
   return (
     <>
       <ul id="top_nav">
         <li>Save</li>
-        <li>Clear</li>
-        <li>instruc</li>
+        <li onClick={resetToDefault}>Clear</li>
       </ul>
       <div id="main_resume">
         <PersonalInfo />

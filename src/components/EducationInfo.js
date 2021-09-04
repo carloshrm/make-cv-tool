@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InformationListEntry from "./InformationListEntry";
 import DisplayListedEntry from "./DisplayListedEntry";
 import styles from "../styles/ListedInfo.module.css";
@@ -16,6 +16,17 @@ function EducationInfo() {
   function removeEntry(targetIndex) {
     setEducationInfoEntry(educationInfo.filter((e, i) => i !== targetIndex));
   }
+
+  useEffect(() => {
+    let localEducation = JSON.parse(localStorage.getItem("educationInfo"));
+    if (localEducation !== null) {
+      setEducationInfoEntry(localEducation);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("educationInfo", JSON.stringify(educationInfo));
+  });
 
   return (
     <div>
