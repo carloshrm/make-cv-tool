@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,10 +17,12 @@ body {
   top: 0;
   background-color: gainsboro;
   list-style-type: none;
-  padding: 1rem;
+  padding: 0.3rem;
   margin-bottom: 10px;
   width: 100vw;
+  font-size: 1.5rem;
   justify-content: space-around;
+  box-shadow: 0 1px 3px black;
 }
 #top_nav li {
   font-weight: bold;
