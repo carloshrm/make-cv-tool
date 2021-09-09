@@ -8,8 +8,9 @@ body {
 }
 
 #main_resume {
-  width: 80vw;
-  margin: 0 auto 10% auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 4rem 6rem 4rem;
 }
 #top_nav {
   display: flex;

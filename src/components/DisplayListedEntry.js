@@ -7,7 +7,9 @@ function displayListedEntry({ id, singleEntryInfo, removeEntry }) {
       <span>{singleEntryInfo.entryYear}</span>
       <p>{singleEntryInfo.entryLocation}</p>
       <p>{singleEntryInfo.entryRemarks}</p>
-      <button onClick={() => removeEntry(id)}>Del</button>
+      <button className={"_inputField"} onClick={() => removeEntry(id)}>
+        Del
+      </button>
     </div>
   );
 }

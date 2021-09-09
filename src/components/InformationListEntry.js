@@ -37,7 +37,7 @@ function InformationListEntry({ info, addEntry, defaultValues, style }) {
   }
 
   return (
-    <>
+    <div className={"_inputField"}>
       <h4 className={style.form_title} onClick={formDisplayHandler}>
         <Icon>add</Icon>
         <p>Add an Entry</p>
@@ -64,7 +64,7 @@ function InformationListEntry({ info, addEntry, defaultValues, style }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

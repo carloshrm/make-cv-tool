@@ -16,6 +16,7 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
   return (
     <>
       <input
+        className={"_inputField"}
         onBlur={editField}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === "Escape") e.target.blur();

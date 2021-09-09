@@ -7,11 +7,9 @@
   font-weight: normal;
 }
 .personal_info_div {
-  display: grid;
-  text-align: center;
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
   padding: 1em 2em;
-  min-height: 20vh;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   background-color: rgb(0, 124, 124);
@@ -19,12 +17,11 @@
   overflow: hidden;
 }
 .detailed_info_div {
-  justify-self: center;
   padding-left: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 .personal_profile_div p {
   margin: 1.5em 0;

@@ -28,12 +28,14 @@ function SkillsHobbies() {
     <div className={styles.skills_and_hobbies}>
       <h3>Skills</h3>
       <ul>{skillEntries.length > 0 && skillEntries.map((entry, i) => <li key={i}>{entry}</li>)}</ul>
-      <InputField
-        dataValue={individualSkill}
-        setDataFunction={setIndividualSkill}
-        fieldType="text"
-      />
-      <button onClick={addSkill}>Add</button>
+      <div className={"_inputField"}>
+        <InputField
+          dataValue={individualSkill}
+          setDataFunction={setIndividualSkill}
+          fieldType="text"
+        />
+        <button onClick={addSkill}>Add</button>
+      </div>
     </div>
   );
 }

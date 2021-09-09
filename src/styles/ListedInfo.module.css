@@ -17,7 +17,6 @@
 .listed_info_input input,
 .listed_info_input textarea {
   margin: 1px;
-  max-width: 80%;
   font-size: 1em;
   text-align: start;
   border: solid 1px black;

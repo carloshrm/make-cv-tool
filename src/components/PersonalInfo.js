@@ -62,7 +62,7 @@ function PersonalInfo() {
           />
         </div>
         <div className={styles.detailed_info_div}>
-          <span>Email Address:</span>
+          <span>Email</span>
           <InputField
             style={styles.info}
             dataValue={personalInfo.emailAddress}
@@ -70,7 +70,7 @@ function PersonalInfo() {
             fieldType="email"
             displaySwitch={true}
           />
-          <span>Address:</span>
+          <span>Address</span>
           <InputField
             style={styles.info}
             dataValue={personalInfo.localAddress}
@@ -78,7 +78,7 @@ function PersonalInfo() {
             fieldType="text"
             displaySwitch={true}
           />
-          <span>Phone Number:</span>
+          <span>Phone Number</span>
           <InputField
             style={styles.info}
             dataValue={personalInfo.phoneNumber}
@@ -86,7 +86,7 @@ function PersonalInfo() {
             fieldType="tel"
             displaySwitch={true}
           />
-          <span>Social Network:</span>
+          <span>Social Network</span>
           <InputField
             dataValue={personalInfo.socialNetwork}
             setDataFunction={(val) => setInfo({ ...personalInfo, socialNetwork: val })}
@@ -98,6 +98,7 @@ function PersonalInfo() {
       <div className={styles.personal_profile_div}>
         <h3>Profile </h3>
         <textarea
+          className={"_inputField"}
           ref={profileInput}
           onBlur={swapDisplay}
           onChange={(e) => setInfo({ ...personalInfo, personalProfile: e.target.value })}
