@@ -14,8 +14,8 @@ function App() {
 
   function saveCV() {
     let CV = document.getElementById("main_resume").cloneNode(true);
-    // CV.id = "";
-    // CV.style.width = "595px";
+    CV.id = "";
+    CV.style.width = "595px";
 
     const file = new jsPDF({
       format: "a4",

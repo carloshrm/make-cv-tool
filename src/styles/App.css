@@ -10,6 +10,8 @@ body {
 #main_resume {
   display: flex;
   flex-direction: column;
+  width: 80vw;
+
   margin: 0 4rem 6rem 4rem;
 }
 #top_nav {
@@ -34,6 +36,9 @@ body {
   right: 0;
   bottom: 0;
   padding: 0.3rem;
+  font-weight: bold;
+  font-size: 1em;
+
   background-color: gainsboro;
 }
 

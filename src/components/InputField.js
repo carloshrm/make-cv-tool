@@ -3,6 +3,7 @@ import React from "react";
 function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, style }) {
   const inputRef = React.createRef();
   const displayRef = React.createRef();
+  const initialInfo = dataValue;
 
   function editField() {
     if (displaySwitch === undefined) return;
@@ -24,7 +25,7 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
         ref={inputRef}
         type={fieldType}
         minLength="1"
-        placeholder={dataValue}
+        placeholder={initialInfo}
         value={dataValue}
         onChange={(e) => setDataFunction(e.target.value)}
       />

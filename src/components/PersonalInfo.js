@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import InputField from "./InputField";
 import styles from "../styles/PersonalInfo.module.css";
+import Icon from "@material-ui/core/Icon";
 
 function PersonalInfo() {
   const [personalInfo, setInfo] = useState({
