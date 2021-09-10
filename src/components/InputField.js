@@ -7,6 +7,8 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
   function swapVisibility() {
     if (displaySwitch === undefined) return;
     if (inputRef.current.value.trim() === "") return;
+    inputRef.current.style.display = displaySwitch ? "none" : "block";
+    displayRef.current.style.display = displaySwitch ? "block" : "none";
     displaySwitch = !displaySwitch;
   }
 
@@ -23,15 +25,9 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
         minLength="1"
         placeholder={dataValue}
         value={dataValue}
-        style={{ display: displaySwitch ? "none" : "block" }}
         onChange={(e) => setDataFunction(e.target.value)}
       />
-      <p
-        style={{ display: displaySwitch ? "block" : "none" }}
-        className={style}
-        ref={displayRef}
-        onClick={swapVisibility}
-      >
+      <p style={{ display: "none" }} className={style} ref={displayRef} onClick={swapVisibility}>
         {dataValue}
       </p>
     </>
