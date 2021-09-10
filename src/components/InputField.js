@@ -4,11 +4,9 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
   const inputRef = React.createRef();
   const displayRef = React.createRef();
 
-  function editField() {
+  function swapVisibility() {
     if (displaySwitch === undefined) return;
     if (inputRef.current.value.trim() === "") return;
-    inputRef.current.style.display = displaySwitch ? "none" : "block";
-    displayRef.current.style.display = displaySwitch ? "block" : "none";
     displaySwitch = !displaySwitch;
   }
 
@@ -16,7 +14,7 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
     <>
       <input
         className={"_inputField"}
-        onBlur={editField}
+        onBlur={swapVisibility}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === "Escape") e.target.blur();
         }}
@@ -25,9 +23,15 @@ function InputField({ dataValue, setDataFunction, fieldType, displaySwitch, styl
         minLength="1"
         placeholder={dataValue}
         value={dataValue}
+        style={{ display: displaySwitch ? "none" : "block" }}
         onChange={(e) => setDataFunction(e.target.value)}
       />
-      <p style={{ display: "none" }} className={style} ref={displayRef} onClick={editField}>
+      <p
+        style={{ display: displaySwitch ? "block" : "none" }}
+        className={style}
+        ref={displayRef}
+        onClick={swapVisibility}
+      >
         {dataValue}
       </p>
     </>

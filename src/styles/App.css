@@ -1,18 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Raleway", sans-serif;
+  font-family: "Verdana";
+}
+
+#instructions {
+  position: absolute;
+  left: 0;
+  background-color: gainsboro;
+  padding: 1rem;
+  overflow: hidden;
+  width: 20vw;
 }
 
 #main_resume {
   display: flex;
   flex-direction: column;
-  width: 80vw;
-
-  margin: 0 4rem 6rem 4rem;
+  width: 50%;
+  margin: 0 auto 10rem auto;
 }
 #top_nav {
   display: flex;
@@ -23,7 +28,7 @@ body {
   padding: 0.3rem;
   margin-bottom: 10px;
   width: 100vw;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   justify-content: space-around;
   box-shadow: 0 1px 3px black;
 }
@@ -62,5 +67,6 @@ h3 {
 span {
   text-align: left;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Calibri";
+  font-size: 1rem;
 }

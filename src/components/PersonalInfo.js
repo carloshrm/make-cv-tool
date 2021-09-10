@@ -88,6 +88,7 @@ function PersonalInfo() {
           />
           <span>Social Network</span>
           <InputField
+            style={styles.info}
             dataValue={personalInfo.socialNetwork}
             setDataFunction={(val) => setInfo({ ...personalInfo, socialNetwork: val })}
             fieldType="text"
