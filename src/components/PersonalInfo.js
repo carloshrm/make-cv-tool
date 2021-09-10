@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import InputField from "./InputField";
 import styles from "../styles/PersonalInfo.module.css";
-import Icon from "@material-ui/core/Icon";
 
 function PersonalInfo() {
   const [personalInfo, setInfo] = useState({
@@ -28,7 +27,7 @@ function PersonalInfo() {
   }
 
   function swapDisplay(e) {
-    if (profileInput.current.value === "" || profileInput.current.value === " ") return;
+    if (profileInput.current.value.trim() === "") return;
     let switchValue = e.target.nodeName === "P";
     profileInput.current.style.display = switchValue ? null : "none";
     profileRef.current.style.display = switchValue ? "none" : null;
